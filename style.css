@@ -4,6 +4,120 @@ body {
     color: #fff;
 }
 
-#Update{
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+    text-align: right;
+}
+
+.form-group input {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#Submit {
+    background-color: #28a745;
+    color: white;
+}
+
+#Update {
     display: none;
+    background-color: #007bff;
+    color: white;
+    display: none; /* ซ่อนปุ่ม Update จนกว่าจะต้องการ */
+}
+
+.table-container {
+    width: 100%;
+    max-width: 95%; /* ขยายขนาดตารางให้เกือบเต็มหน้าจอ */
+    margin: 0 auto; /* จัดกึ่งกลาง */
+    padding: 20px;
+}
+
+table {
+    width: 100%; /* ให้ตารางขยายเต็มพื้นที่ของ container */
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+td img {
+    max-width: 100px; /* ปรับขนาดรูปในคอลัมน์ image */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+}
+
+#totalPrice {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.col-lg-12{
+    width: 100%;
+    margin-bottom: 10px;
 }
