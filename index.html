@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <div class="container">
+        <h2 class ="mt-5 mb-5">Shopping Cart</h2>
+        <div class = "mb-5" >
+            <div class="row">
+
+                <!-------Data entry section------->
+                
+                <div class="form-group col-md-6 mb-3">
+                    <label for = "Id prodcut">Id Prodcut</label>
+                    <input type="text" name="Id_prodcut" class="form control" id ="Id_prodcut" placeholder="Enter Id prodcut">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for = "prodcut_name">Prodcut Name</label>
+                    <input type="text" name="prodcut_name" class="form control" id ="prodcut_name" placeholder="Enter prodcut_name">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for = "price">price</label>
+                    <input type="number" name="price" class="form control" id ="price" placeholder="Enter price">
+                </div>
+
+                <div class="form-group col-md-6 mb-3">
+                    <label for = "image">image</label>
+                    <input type="url" name="image" class="form control" id ="image" placeholder="Enter image" src="" alt="Submit" width="48" height="48">
+                </div>
+
+                <!-------button------->
+
+                <div class="col-lg-12 mt-5">
+                    <button class="btn btn-success" id="Submit" onclick="AddData()">Add Data</button>
+                    
+                    <button class="btn btn-primary" id="Update" onclick="AddData()">Update</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+                <!-------Table------->
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-bordred" id="crudtable">
+                    <thead>
+                       <tr>
+                         <th>Id Prodcut</th>
+                         <th>Prodcut Name</th>
+                         <th>price</th>
+                         <th>image</th>
+                         <th>Action</th>
+                       </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
