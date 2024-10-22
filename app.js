@@ -42,10 +42,11 @@ function showData(){
     }
 
     var html = ""; //ประกาศ html เป็น ค่าว่าง เพื่อที่จะนำข้อมูลที่ input เข้ามา ตอนนี้อยู่ในรูปแบบ Object นำข้อมูลกรอกลงในตารางแสดงผลบน html ดังนี้
-
+    let count = 0;
     dataList.forEach(function (element, index){
+        count ++ ;
         html += "<tr>"
-            html += `<td><input type="checkbox" class="itemCheckbox" id="checklist_${index}" name="checklist" onclick="calculateTotal(), updateSelectedCart()"></td>`; //กล่อง checklist
+            html += `<td><input type="checkbox" class="itemCheckbox" id="checklist_${index}" name="checklist" onclick="calculateTotal(), updateSelectedCart()"> ${count} </td>`; //กล่อง checklist
             html += "<td>" + element.Id_product + "</td>"; 
             html += "<td>" + element.product_name + "</td>";
             html += "<td class='price'>" + element.price + "</td>";
@@ -192,13 +193,13 @@ function calculateTotal() {
 
     checkboxes.forEach(function (checkbox) {
         // ดึงค่า price จากแถวที่เลือก
-        var row = checkbox.closest('tr');
-        var price = parseFloat(row.querySelector('.price').innerText);
-        total += price;
+        var row = checkbox.closest('tr'); //การอ้างอิงถึง element ที่เป็น checkbox คำสั่ง closest('tr') จะค้นหา element tr
+        var price = parseFloat(row.querySelector('.price').innerText); //parseFloat(): จะทำการแปลงข้อความที่ดึงมาจาก .price เป็นตัวเลขชนิดทศนิยม
+        total += price; // total = total + price
     });
 
     // แสดงผลรวมของราคาสินค้าในหน้าจอ
-    document.getElementById("totalPrice").innerHTML = "Total Price: " + total.toFixed(2) + "฿";
+    document.getElementById("totalPrice").innerHTML = "Total Price: " + total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "฿"; // แสดงผล total โดยมีทศนิยม 2 ตำแหน่ง และใช้(,)แบ่งตัวเลขทีละ 3 หลักเพื่อให้อ่านง่ายขึ้น
 }
 
 /*----------------------------------- Update Selected Cart -----------------------------------*/
